@@ -1,16 +1,19 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import random
+import pandas as pd
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def board():
+    value = [random.randrange(1, 100, 1) for i in range(1, 21)]
+    properties = list(range(1, 21))
+
+    info = pd.DataFrame(value, properties)
+    print(info)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def random_start():
+    player = random.randint(1, 4)
+    return player
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+random_start()
+board()
